@@ -28,6 +28,10 @@ def morse(oracion : str, tipo : str):
                 traduccion += f'{buscar(letra, tipo)} '
             traduccion += '  '
     elif tipo == 'castellanear': 
+        oracion = oracion.replace('‑', '—')
+        oracion = oracion.replace('−', '—')
+        oracion = oracion.replace('-', '—')
+        oracion = oracion.replace('.', '·')
         oracion = oracion.split('  ')
         for esto in oracion: 
             for letra in esto.split(' '): 
